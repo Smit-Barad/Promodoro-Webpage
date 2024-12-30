@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promodoro Online</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    
+    <!-- Default Background Video -->
+<video id="default-bg-video" autoplay muted loop>
+    <source src="https://cdn.pixabay.com/video/2024/05/30/214500_large.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+    <!-- Sign In and Log In Buttons -->
+    <div class="auth-buttons">
+        <button class="btn auth-btn" id="sign-in-btn">Sign In</button>
+        <button class="btn auth-btn" id="log-in-btn">Log In</button>
+    </div>
+    
+    <!-- Sign In Modal -->
+    <div class="modal" id="sign-in-modal">
+        <div class="modal-content">
+            <span class="close" data-target="sign-in-modal">&times;</span>
+            <h2>Sign In</h2>
+            <form id="sign-in-form">
+                <input type="text" id="sign-in-username" placeholder="Username" required>
+                <input type="email" id="sign-in-email" placeholder="Email" required>
+                <input type="password" id="sign-in-password" placeholder="Password" required>
+                <button type="submit" class="btn submit-btn">Sign In</button>
+            </form>
+            <p id="sign-in-feedback" class="feedback"></p>
+        </div>
+    </div>
+    
+    <!-- Log In Modal -->
+    <div class="modal" id="log-in-modal">
+        <div class="modal-content">
+            <span class="close" data-target="log-in-modal">&times;</span>
+            <h2>Log In</h2>
+            <form id="log-in-form">
+                <input type="email" id="log-in-email" placeholder="Email" required>
+                <input type="password" id="log-in-password" placeholder="Password" required>
+                <button type="submit" class="btn submit-btn">Log In</button>
+            </form>
+            <p id="log-in-feedback" class="feedback"></p>
+        </div>
+    </div>
+    
+    <!-- Greeting Section -->
+    <!-- Greeting Section -->
+<div id="greeting-section">
+    <h1 id="greeting-message"></h1>
+</div>
+
+    
+
+
+   <!-- Real-Time Clock Section START HERE -->
+
+
+<div class="time-container">
+    <!-- Display the real-time clock -->
+    <div id="time-display"></div>
+    <!-- Display the real-time date -->
+    <div id="date-display"></div>
+    <!-- Container for the progress bar -->
+    <div class="progress-bar-container">
+        <!-- Progress bar showing the percentage of the day passed -->
+        <div id="time-progress-bar"></div>
+    </div>
+</div>
+
+<!-- Real-Time Clock Section END HERE -->
+
+
+
+   <!-- THEME BUTTON START HERE -->
+<div class="theme-button-container">
+    <!-- Button with icon -->
+    <button class="theme-button" title="Change Website Theme">
+        <i class="fas fa-palette"></i> Theme
+    </button>
+    <!-- Pop-up box -->
+    <div class="popup-box hidden">
+        <div class="popup-header">
+            <span>Select a Theme</span>
+            <button class="close-popup">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="video-grid">
+            <div class="video-item">
+                <video muted loop>
+                    <source src="https://cdn.pixabay.com/video/2024/05/30/214500_large.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-item">
+                <video muted loop>
+                    <source src="https://cdn.pixabay.com/video/2021/08/10/84574-586228759_large.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-item">
+                <video muted loop>
+                    <source src="https://cdn.pixabay.com/video/2024/03/13/204056-923134012_large.mp4" type="video/mp4">
+                </video>
+            </div>
+            <!-- Add more video items as needed -->
+            <div class="video-item">
+                <video muted loop>
+                    <source src="https://cdn.pixabay.com/video/2021/05/18/74450-552602288_large.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-item">
+                <video muted loop>
+                    <source src="https://cdn.pixabay.com/video/2023/09/10/179996-863378242_large.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-item">
+                <video muted loop>
+                    <source src="https://cdn.pixabay.com/video/2021/10/01/90408-626004752_large.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="video-item">
+                <video muted loop>
+                    <source src="https://motionbgs.com/media/4189/luffy-moonlight-meditation.960x540.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <div class="video-item">
+                <video muted loop>
+                    <source src="https://motionbgs.com/media/2570/sasuke-studying.960x540.mp4" type="video/mp4">
+                </video>
+            </div>
+            
+        </div>
+    </div>
+</div>
+</div>
+<!-- THEME BUTTON END HERE -->
+
+
+
+   <!-- Effect Button START HERE -->
+<button class="effect-button">
+    <img src="https://cdn-icons-png.flaticon.com/512/5105/5105486.png" alt="Effect" class="effect-icon">
+    <span>Effect</span>
+</button>
+
+<!-- Pop-up for Effect Options START HERE -->
+<div class="effect-popup hidden">
+    <div class="effect-options">
+        <!-- Snow Effect Option -->
+        <div class="effect-option" id="toggle-snow">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5AEBd1EYc5l2BO_ZiZz-J2AfU6wrehk7dwg&s" alt="Snow Effect" class="effect-icon">
+            <span>Snow</span>
+        </div>
+        <!-- Rain Effect Option -->
+        <div class="effect-option" id="toggle-rain">
+            <img src="https://icons.iconarchive.com/icons/large-icons/large-weather/512/rain-icon.png" alt="Rain Effect" class="effect-icon">
+            <span>Rain</span>
+        </div>
+    </div>
+</div>
+<!-- Effect Button END HERE -->
+<!-- Effect Button END HERE -->
+
+
+
+<!-- Promo Button START HERE -->
+<!-- Promo Button -->
+<button class="promo-button">
+    <img src="https://cdn-icons-png.flaticon.com/512/14358/14358956.png" alt="Promo Icon" class="promo-icon">Promo
+</button>
+
+<!-- Promo Popup -->
+<div id="promo-popup" class="promo-popup hidden">
+    <h2><img src="https://cdn-icons-png.flaticon.com/512/8078/8078447.png" alt="Timer Icon" class="header-icon"> Set Timer</h2>
+    <label for="work-timer">Work Timer (MM:SS):</label>
+    <input id="work-timer" type="text" placeholder="25:00" value="25:00">
+    <label for="break-timer">Break Timer (MM:SS):</label>
+    <input id="break-timer" type="text" placeholder="05:00" value="05:00">
+    <div class="timer-buttons">
+        <button id="start-work-timer">Start Work Timer</button>
+        <button id="start-break-timer">Start Break Timer</button>
+    </div>
+</div>
+
+<!-- Timer Display -->
+<div id="timer-display" class="hidden">
+    <span id="timer-countdown">00:00:00</span>
+    <button id="stop-alarm" class="hidden">Stop Alarm</button>
+</div>
+
+
+
+<!-- Promo Button END HERE -->
+
+
+<!-- Music Button START HERE -->
+
+<!-- Music Button -->
+<button class="music-button">
+    <i class="fa fa-music"></i> Music
+</button>
+
+<!-- Music Popup -->
+<div id="music-popup" class="music-popup hidden">
+    <h2 class="popup-title">🎵 Select Your Music</h2>
+    <ul id="music-list" class="styled-music-list">
+        
+        
+    </ul>
+
+   
+
+    <label for="upload-music" class="upload-label">Upload Music:</label>
+    <input id="upload-music" type="file" accept=".mp3,.wav" class="styled-input">
+</div>
+
+<!-- Music Player Box -->
+<div id="music-player" class="music-player hidden">
+    <div class="track-info">
+        <img id="album-art" src="data:image/jpeg;base64,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" alt="Album Art">
+        <div>
+            <span id="track-name">No Track Playing</span>
+        </div>
+    </div>
+    <div class="controls">
+        <button id="stop-music" class="control-button">⏹️ Stop</button>
+        <button id="resume-music" class="control-button">▶️ Resume</button>
+        <button id="repeat-music" class="control-button">🔁 Repeat</button>
+    </div>
+</div>
+
+<!-- Music Button END HERE -->
+
+
+<!-- To-Do Button START HERE -->
+
+<!-- To-Do Button -->
+<button class="todo-button">
+    <i class="fas fa-tasks"></i> To-Do
+</button>
+
+<!-- To-Do Popup -->
+<div id="todo-popup" class="todo-popup hidden">
+    <h2><i class="fas fa-tasks"></i> My To-Do List</h2>
+    <div class="task-input-container">
+        <input id="task-input" type="text" placeholder="Enter a task...">
+        <button id="add-task-button">+</button>
+    </div>
+    <ul id="task-list"></ul>
+</div>
+
+
+  
+  <!-- To-Do Button END HERE -->
+
+
+    <!-- JavaScript will generate the grid dynamically -->
+    <script src="script.js"></script> <!-- Link to external JavaScript -->
+</body>
+</html>
