@@ -1,2 +1,18 @@
 # Promodoro-Webpage
-A dynamic Pomodoro website offering real-time clock and date, customizable timers for work and breaks, and background themes with video options. Includes sign-in/login modals, interactive effects like snow/rain, and a music player with upload capability. Features seamless UX, progress tracking, and motivational visuals to enhance productivity.
+Pomodoro Online is an engaging productivity website designed to help users manage their time efficiently with a modern and visually appealing interface. Featuring a customizable Pomodoro timer, dynamic themes, music integration, and real-time effects, the platform creates a personalized experience for staying focused and productive.
+
+Key Features:
+
+User Authentication: Sign-in and login functionality for personalized usage.
+Customizable Timer: Set work and break intervals for optimal productivity.
+Real-Time Clock & Date: Visualize time progression with an intuitive progress bar.
+Dynamic Themes: Switch between different video backgrounds to suit your mood.
+Interactive Effects: Add snow or rain effects for an immersive ambiance.
+Music Integration: Play, upload, and manage your music directly on the platform.
+Responsive Design: Accessible on all devices for seamless use.
+Technologies Used:
+
+HTML5 for the website structure.
+CSS3 for modern styling.
+JavaScript for interactivity.
+Font Awesome for stylish icons.
